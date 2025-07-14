@@ -56,3 +56,5 @@ pnpm-lock.yaml
 .parcel-cache/
 .temp/**
 functions/*
+
+Service/
