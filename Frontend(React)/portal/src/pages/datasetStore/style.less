@@ -1,0 +1,294 @@
+@import '~antd/es/style/themes/default.less';
+
+// 样本集管理页面容器样式
+.dataset-store-page {
+  .tab-content-wrapper {
+    height: calc(100vh - 200px);
+    min-height: 500px;
+    
+    .ant-row {
+      height: 100%;
+      
+      .ant-col {
+        height: 100%;
+        
+        .card {
+          height: 100%;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          
+          &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+          
+          .ant-card-head {
+            background: @primary-color;
+            border-radius: 8px 8px 0 0;
+            border: none;
+            
+            .ant-card-head-title {
+              color: white;
+              font-weight: 600;
+              font-size: 16px;
+            }
+            
+            .ant-card-extra {
+              .ant-input {
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.9);
+                color: #333;
+                
+                &::placeholder {
+                  color: rgba(51, 51, 51, 0.6);
+                }
+                
+                &:focus {
+                  border-color: rgba(255, 255, 255, 0.8);
+                  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+                  background: rgba(255, 255, 255, 0.95);
+                }
+              }
+              
+              .ant-btn {
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                  background: rgba(255, 255, 255, 0.2);
+                  border-color: rgba(255, 255, 255, 0.5);
+                  transform: translateY(-1px);
+                }
+                
+                &.ant-btn-primary {
+                  background: rgba(255, 255, 255, 0.2);
+                  border-color: rgba(255, 255, 255, 0.4);
+                  
+                  &:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    border-color: rgba(255, 255, 255, 0.6);
+                  }
+                }
+              }
+            }
+          }
+          
+          .ant-card-body {
+            height: calc(100% - 57px);
+            padding: 16px;
+            
+            > div {
+              height: 100%;
+              overflow-y: auto;
+              
+              // 自定义滚动条样式
+              &::-webkit-scrollbar {
+                width: 6px;
+              }
+              
+              &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 3px;
+              }
+              
+              &::-webkit-scrollbar-thumb {
+                background: @primary-color;
+                border-radius: 3px;
+                
+                &:hover {
+                  background: #40a9ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 样本列表项样式 - 适配两列布局
+.dataset-store-page {
+  .sample {
+    transition: all 0.3s ease;
+    border: 1px solid @border-color-split;
+    border-radius: 8px;
+    background: white;
+    
+    &:hover {
+      background-color: #f0f7ff;
+      box-shadow: 0 4px 12px rgba(24, 144, 255, 0.15);
+      transform: translateY(-2px);
+      border-color: @primary-color;
+    }
+    
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          border-radius: 4px;
+          border-color: @primary-color;
+          
+          &:hover {
+            border-color: #40a9ff;
+          }
+        }
+        
+        &.ant-checkbox-checked {
+          .ant-checkbox-inner {
+            background: @primary-color;
+            border-color: @primary-color;
+          }
+        }
+      }
+    }
+    
+    .ant-tag {
+      border-radius: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border: none;
+      
+      &[color="#2db7f5"] {
+        background: #1890ff;
+        color: white;
+      }
+      
+      &[color="#87d068"] {
+        background: #52c41a;
+        color: white;
+      }
+    }
+    
+    .ant-btn {
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      
+      &.ant-btn-text {
+        color: #ff4d4f;
+        
+        &:hover {
+          color: #ff7875;
+          background: #fff2f0;
+        }
+      }
+    }
+    
+    // 图像预览样式
+    .sample-preview-image {
+      .ant-image {
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        
+        .ant-image-img {
+          transition: transform 0.3s ease;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+      
+      .ant-image-placeholder {
+        background: @component-background;
+        border: 1px solid @border-color-base;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .anticon {
+          color: @disabled-color;
+          font-size: 16px;
+        }
+      }
+      
+      // 图像标签样式
+      > div {
+        position: relative;
+        
+        > div:first-child {
+          font-size: 11px;
+          color: @text-color-secondary;
+          margin-bottom: 4px;
+          text-align: center;
+          font-weight: 500;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 2px 6px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: @screen-lg) {
+  .dataset-store-page {
+    .tab-content-wrapper {
+      height: calc(100vh - 180px);
+    }
+    
+    // 在中等屏幕上调整图像预览大小
+    .sample {
+      .sample-preview-image {
+        .ant-image {
+          width: 50px !important;
+          height: 50px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-md) {
+  .dataset-store-page {
+    .tab-content-wrapper {
+      height: calc(100vh - 160px);
+    }
+    
+    // 在小屏幕上改为单列布局
+    .ant-col {
+      span: 24 !important;
+    }
+    
+    .sample {
+      margin-bottom: 12px;
+      
+      .sample-preview-image {
+        .ant-image {
+          width: 45px !important;
+          height: 45px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: @screen-sm) {
+  .dataset-store-page {
+    .sample {
+      padding: 8px !important;
+      min-height: 100px !important;
+      
+      .sample-preview-image {
+        margin-right: 8px !important;
+        
+        .ant-image {
+          width: 40px !important;
+          height: 40px !important;
+        }
+        
+        > div > div:first-child {
+          font-size: 10px !important;
+        }
+      }
+    }
+  }
+}

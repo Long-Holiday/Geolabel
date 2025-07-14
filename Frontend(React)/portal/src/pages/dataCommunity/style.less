@@ -1,0 +1,107 @@
+.data-community-page {
+  .ant-page-header {
+    padding: 16px 24px;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .data-community-content {
+    padding: 16px;
+    background: #f5f5f5;
+    min-height: calc(100vh - 200px);
+  }
+
+  .community-tabs {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .ant-tabs-nav {
+      padding: 0 24px;
+      margin: 0;
+      
+      .ant-tabs-tab {
+        padding: 16px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        
+        &.ant-tabs-tab-active {
+          .ant-tabs-tab-btn {
+            color: #1890ff;
+          }
+        }
+      }
+    }
+    
+    .ant-tabs-content-holder {
+      .ant-tabs-content {
+        .ant-tabs-tabpane {
+          padding: 16px;
+          
+          .tab-content-wrapper {
+            background: transparent;
+            padding: 0;
+            min-height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  // 覆盖子组件的样式，使其适应新的布局
+  .card {
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    
+    .ant-card-head {
+      border-bottom: 1px solid #f0f0f0;
+      background: #fafafa;
+    }
+    
+    .ant-card-body {
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+
+  .sample {
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s;
+    margin: 0 10px;
+    border-radius: 4px;
+    
+    &:hover {
+      background-color: #f8f9fa !important;
+    }
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .ant-tag {
+    margin: 2px;
+    border-radius: 4px;
+  }
+
+  .ant-btn {
+    border-radius: 6px;
+    transition: all 0.3s;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .ant-input {
+    border-radius: 6px;
+  }
+
+  .ant-modal {
+    .ant-modal-content {
+      border-radius: 8px;
+    }
+  }
+} 

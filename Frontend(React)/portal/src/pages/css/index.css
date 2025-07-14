@@ -1,0 +1,58 @@
+.uploader {
+  padding: 16px 0;
+  text-align: center;
+  background: #fafafa;
+  border: 1px dashed #d9d9d9;
+  border-radius: 4px;
+}
+.uploader a {
+  color: inherit;
+}
+.uploader button {
+  margin: 4px;
+}
+.uploadIcon {
+  max-width: 23em;
+  margin: 0 auto;
+  font-size: 1em;
+}
+.uploadIcon p {
+  padding: 0.8em 0;
+}
+.form .ant-form-item {
+  margin-bottom: 14px;
+}
+.form {
+  text-align: center;
+}
+.form button {
+  display: inline-block;
+  margin: 14px;
+}
+.limit {
+  padding: 0 10%;
+  padding-top: 10px;
+  color: #aaaaaa;
+  font-size: 1em;
+  text-align: center;
+}
+.fileInfo {
+  width: 80%;
+  margin: 0 auto 10px;
+  padding: 10px 30px;
+  background-color: #f5f7fe;
+  border-radius: 4px;
+}
+.fileInfo .choose {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+.fileInfo .info {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.fileInfo .info span:first-child {
+  color: #356de8;
+  font-size: 1.2em;
+}

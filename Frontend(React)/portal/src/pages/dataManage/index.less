@@ -1,0 +1,154 @@
+.uploader {
+  padding: 16px 0;
+  text-align: center;
+  background: #fafafa;
+  border: 1px dashed #d9d9d9;
+  border-radius: 4px;
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    margin: 4px;
+  }
+}
+.uploadIcon {
+  max-width: 23em;
+  margin: 0 auto;
+  font-size: 1em;
+  p {
+    padding: 0.8em 0;
+  }
+}
+.form .ant-form-item {
+  margin-bottom: 14px;
+}
+.form {
+  text-align: center;
+
+  button {
+    display: inline-block;
+    margin: 14px;
+  }
+}
+.limit {
+  padding: 0 10%;
+  padding-top: 10px;
+  color: rgb(170, 170, 170);
+  // font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+}
+
+.fileInfo {
+  width: 80%;
+  margin: 0 auto 10px;
+  padding: 10px 30px;
+  background-color: #f5f7fe;
+  border-radius: 4px;
+
+  .choose {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+
+    span:first-child {
+      color: rgb(53, 109, 232);
+      font-size: 1.2em;
+    }
+  }
+}
+
+// 分步表单样式
+.stepContent {
+  padding: 20px 0;
+  min-height: 250px;
+
+  .uploader {
+    margin-bottom: 16px;
+  }
+
+  .ant-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .fileList {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  .fileItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #e6f7ff;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .uploadProgress {
+    text-align: center;
+    padding: 40px 20px;
+
+    .ant-progress {
+      margin: 20px 0;
+    }
+
+    h3 {
+      color: #1890ff;
+      margin-bottom: 16px;
+    }
+
+    p {
+      color: #666;
+      margin: 8px 0;
+    }
+  }
+}
+
+// 步骤导航样式优化
+.ant-steps {
+  .ant-steps-item-title {
+    font-weight: 500;
+  }
+
+  .ant-steps-item-process .ant-steps-item-icon {
+    background-color: #1890ff;
+    border-color: #1890ff;
+  }
+
+  .ant-steps-item-finish .ant-steps-item-icon {
+    background-color: #52c41a;
+    border-color: #52c41a;
+  }
+}
+
+// 按钮组样式
+.steps-action {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+
+  .ant-btn {
+    margin-left: 8px;
+  }
+}

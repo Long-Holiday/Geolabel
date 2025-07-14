@@ -1,0 +1,56 @@
+
+server:
+  port: 1290
+# Spring 配置用于邮件和 RabbitMQ
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # 数据源配置，用于连接 POSTGRESQL 数据库
+  datasource:
+    url: jdbc:postgresql://localhost:5432/label  # POSTGRESQL 数据库的 JDBC URL
+    username: postgres  # 数据库用户名
+    password: 123456  # 数据库密码
+    driver-class-name: org.postgresql.Driver  # POSTGRESQL JDBC 驱动类名
+    # Spring Security 配置，用于 JWT 身份验证
+  security:
+    jwt:
+      key: '321456'  # JWT 密钥
+      expire: 72  # JWT 过期时间（小时）
+  #      limit:
+  #        base: 10  # 基础频率限制
+  #        upgrade: 300  # 升级频率限制
+  #        frequency: 30  # 频率限制
+
+  redis:
+    host: localhost   # Redis服务器主机名
+    port: 6379        # Redis服务器端口
+    password:    123321      # Redis服务器密码（如果有的话）
+    database: 0       # Redis数据库索引，默认是0
+
+
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+geoserver:
+  url: http://localhost:8081/geoserver
+  username: admin
+  password: geoserver
+
+minio:
+  endpoint: http://127.0.0.1:9000 #Minio服务所在地址
+  bucketName: big-event #存储桶名称
+  accessKey: minioadmin #访问的key
+  secretKey: minioadmin #访问的秘钥
+
+knife4j:
+  enable: true
+
+logging:
+  level:
+    com.example.labelMark.mapper: trace
+  #    org:
+  #      springframework:
+  #        security: DEBUG

@@ -1,0 +1,55 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+样本标注平台代码样本标注平台代码labelMarklogs/
+D:样本标注平台代码样本标注平台代码labelMarklogs/
+*.log
+logs/
+
+trained_models/*
+!trained_models/
+
+filecontext.py
+mask_processing_comparison.png
+original_mask.png
+post_processed_mask.png
+post_processed_predicted_mask.png
+*.sql
+raw_predicted_mask.png
+yolo11m-obb.pt
+yolo11n.pt
+__pycache__/
+
+*.tif
+*.png

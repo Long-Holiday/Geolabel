@@ -1,0 +1,246 @@
+.model-tool-panel {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  
+  &.collapsed {
+    max-height: 40px;
+    
+    .model-tool-header {
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 12px;
+      min-height: 40px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+    
+    .model-tool-content {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      padding: 0;
+    }
+  }
+  
+  &.expanded {
+    max-height: 1200px;
+    
+    .model-tool-header {
+      border-radius: 6px 6px 0 0;
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    
+    .model-tool-content {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+      padding: 16px;
+    }
+  }
+  
+  .model-tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1890ff;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #40a9ff;
+    }
+    
+    .toggle-icon {
+      transition: transform 0.3s ease;
+      margin-left: 8px;
+      
+      &.collapsed {
+        transform: rotate(0deg);
+      }
+      
+      &.expanded {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  
+  .model-tool-content {
+    background: rgba(247, 247, 247, 0.95);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    transition: all 0.3s ease;
+  }
+}
+
+.assist-function-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  .assist-function-select {
+    margin-bottom: 12px;
+  }
+  
+  .inference-section {
+    margin-bottom: 12px;
+  }
+  
+  .assist-params {
+    margin-bottom: 12px;
+  }
+}
+
+// 输入框组样式
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  
+  .input-label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  
+  .ant-input {
+    transition: all 0.2s ease;
+    
+    &:focus {
+      border-color: #1890ff;
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+  }
+}
+
+// 参数设置区域样式
+.params-container {
+  .params-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .params-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .model-tool-panel {
+    .assist-params {
+      .params-grid {
+        flex-direction: column;
+        gap: 12px !important;
+        
+        .input-group {
+          width: 100%;
+          
+          .ant-input {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+    
+    // 训练参数区域在移动端的布局
+    .assist-function-select {
+      div[style*="display: flex"] {
+        flex-direction: column;
+        gap: 12px !important;
+        align-items: stretch !important;
+        
+        > div {
+          width: 100%;
+          min-width: auto !important;
+          
+          .ant-input {
+            width: 100% !important;
+          }
+          
+          .ant-btn {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .model-tool-panel {
+    margin: 8px 0;
+    
+    &.expanded .model-tool-content {
+      padding: 12px;
+    }
+    
+    .assist-function-select,
+    .inference-section {
+      .ant-select {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+
+// 消息窗口样式
+.message-window {
+  .message-item {
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background-color: #f0f0f0 !important;
+      transform: translateX(2px);
+    }
+  }
+  
+  .message-content {
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+  
+  .message-header {
+    .message-type {
+      &.success { color: #52c41a; }
+      &.error { color: #ff4d4f; }
+      &.warning { color: #faad14; }
+      &.info { color: #1890ff; }
+    }
+  }
+  
+  .message-list {
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+      
+      &:hover {
+        background: #a8a8a8;
+      }
+    }
+  }
+} 

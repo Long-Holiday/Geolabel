@@ -1,0 +1,58 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+**/node_modules/
+
+# roadhog-api-doc ignore
+/src/utils/request-temp.js
+_roadhog-api-doc
+
+# production
+**/dist/
+**/build/
+**/out/
+
+# misc
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+npm-debug.log*
+yarn-error.log
+*.log
+*.tif
+*bak
+*.exe
+
+# coverage
+**/coverage/
+
+# IDE
+**/.idea/
+**/.vscode/
+.history
+
+# environment
+*.env
+*.env.local
+.env*.local
+
+# umi
+.umi
+.umi-production
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+# lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# cache
+.cache/
+.parcel-cache/
+.temp/**
+functions/*
