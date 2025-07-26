@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.labelMark.mapper.TaskMapper">
+
+    <select id="getTaskInfo" resultType="java.util.Map">
+        SELECT
+        task_accepted.id,
+        task_accepted.type_arr,
+        sys_user.username AS username,
+        sys_user.user_id AS userid,
+        task.task_id,
+        task.task_name,
+        task.task_type,
+        task.map_server,
+        task.date_range,
+        task.status,
+        task.audit_feedback,
+        task.task_class,
+        task.score
+        FROM task
+        JOIN task_accepted ON task.task_id = task_accepted.task_id
+        JOIN sys_user ON task_accepted.username = sys_user.username
+        <if test="username !=null">
+            where sys_user.username=#{username}
+        </if>
+        ORDER BY task.status, task.task_id DESC
+    </select>
+</mapper>
