@@ -53,7 +53,7 @@
 
 ### 辅助标注示例
 
-<div align="center"> <img src="images/辅助标注a.png" alt="辅助标注a" width="30%"> <img src="images/辅助标注b.png" alt="辅助标注b" width="30%"> <img src="images/辅助标注c.png" alt="辅助标注c" width="30%"> </div>
+<div align="center"> <img src="images/媒体1.gif" alt="SAM及XGBoost辅助标注" width="80%"> </div>
 
 在“地物分类”任务中，绘制“点”样本作为提示点，将根据提示点调用SAM模型生成预标注样本。如果影像范围过大，则以已有标注为样本训练XGBoost模型并进行推理，实现对整个影像的像素级分类。
 ### 模型训练及推理
@@ -76,5 +76,6 @@ UNet\DeepLabv3+\FastSCNN）、配置超参数并发起训练任务，后端应�
 └── README.md             # 项目说明文档
 
 ```
+
 
 ---
