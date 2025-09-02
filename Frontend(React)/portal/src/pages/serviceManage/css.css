@@ -1,0 +1,73 @@
+.servicename {
+  position: absolute;
+  top: 10px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.serviceInfo {
+  margin-top: 6%;
+  line-height: 150%;
+}
+.serviceInfo .publish {
+  /* position: absolute;
+  bottom: 30%; */
+}
+.serviceInfo .publishUrl {
+  /* 单行超出2省略 */
+}
+.delete {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+}
+
+.serviceInfo-list {
+  line-height: 150%;
+}
+.serviceInfo-list p {
+  margin-bottom: 0;
+}
+
+/* 缩略图相关样式 */
+.thumbnail-container {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  padding: 10px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.thumbnail-container:hover {
+  border-color: #40a9ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-loading {
+  text-align: center;
+}
+
+.thumbnail-loading p {
+  margin-top: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.thumbnail-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #262626;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}

@@ -1,0 +1,214 @@
+@import '~antd/es/style/themes/default.less';
+
+// 共享数据集页面容器样式
+.shared-dataset-page {
+  .tab-content-wrapper {
+    height: calc(100vh - 200px);
+    min-height: 500px;
+    
+    .ant-row {
+      height: 100%;
+      
+      .ant-col {
+        height: 100%;
+        
+        .card {
+          height: 100%;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          
+          &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          }
+          
+          .ant-card-head {
+            background: @primary-color;
+            border-radius: 8px 8px 0 0;
+            border: none;
+            
+            .ant-card-head-title {
+              color: white;
+              font-weight: 600;
+              font-size: 16px;
+            }
+            
+            .ant-card-extra {
+              .ant-input {
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.9);
+                color: #333;
+                
+                &::placeholder {
+                  color: rgba(51, 51, 51, 0.6);
+                }
+                
+                &:focus {
+                  border-color: rgba(255, 255, 255, 0.8);
+                  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+                  background: rgba(255, 255, 255, 0.95);
+                }
+              }
+              
+              .ant-btn {
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                  background: rgba(255, 255, 255, 0.2);
+                  border-color: rgba(255, 255, 255, 0.5);
+                  transform: translateY(-1px);
+                }
+                
+                &.ant-btn-primary {
+                  background: rgba(255, 255, 255, 0.2);
+                  border-color: rgba(255, 255, 255, 0.4);
+                  
+                  &:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    border-color: rgba(255, 255, 255, 0.6);
+                  }
+                }
+              }
+            }
+          }
+          
+          .ant-card-body {
+            height: calc(100% - 57px);
+            padding: 16px;
+            
+            > div {
+              height: 100%;
+              overflow-y: auto;
+              
+              // 自定义滚动条样式
+              &::-webkit-scrollbar {
+                width: 6px;
+              }
+              
+              &::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 3px;
+              }
+              
+              &::-webkit-scrollbar-thumb {
+                background: @primary-color;
+                border-radius: 3px;
+                
+                &:hover {
+                  background: #40a9ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 数据集列表项样式
+.shared-dataset-page {
+  .sample {
+    border-bottom: 1px solid @border-color-split;
+    transition: all 0.3s ease;
+    padding: 12px 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    
+    &:hover {
+      background-color: #e6f7ff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-1px);
+    }
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .ant-checkbox-wrapper {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          border-radius: 4px;
+          border-color: @primary-color;
+          
+          &:hover {
+            border-color: #40a9ff;
+          }
+        }
+        
+        &.ant-checkbox-checked {
+          .ant-checkbox-inner {
+            background: @primary-color;
+            border-color: @primary-color;
+          }
+        }
+      }
+    }
+    
+    .ant-tag {
+      border-radius: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border: none;
+      
+      &[color="#2db7f5"] {
+        background: #1890ff;
+        color: white;
+      }
+      
+      &[color="#87d068"] {
+        background: #52c41a;
+        color: white;
+      }
+      
+      &[color="#f50"] {
+        background: #ff4d4f;
+        color: white;
+      }
+    }
+    
+    .ant-btn {
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      
+      &.ant-btn-link {
+        color: @primary-color;
+        
+        &:hover {
+          color: #40a9ff;
+          background: #e6f7ff;
+        }
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media (max-width: @screen-lg) {
+  .shared-dataset-page {
+    .tab-content-wrapper {
+      height: calc(100vh - 180px);
+    }
+  }
+}
+
+@media (max-width: @screen-md) {
+  .shared-dataset-page {
+    .tab-content-wrapper {
+      height: calc(100vh - 160px);
+    }
+    
+    .sample {
+      padding: 8px;
+      margin-bottom: 6px;
+    }
+  }
+} 

@@ -1,0 +1,357 @@
+@import '~antd/es/style/themes/default.less';
+
+.textOverflow() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+// mixins for clearfix
+// ------------------------
+.clearfix() {
+  zoom: 1;
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+  }
+  &::after {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+  }
+}
+
+.activitiesList {
+  padding: 0 24px 8px 24px;
+  .username {
+    color: @text-color;
+  }
+  .event {
+    font-weight: normal;
+  }
+}
+
+.pageHeaderContent {
+  display: flex;
+  .avatar {
+    flex: 0 1 72px;
+    & > span {
+      display: block;
+      width: 72px;
+      height: 72px;
+      border-radius: 72px;
+    }
+  }
+  .content {
+    position: relative;
+    top: 4px;
+    flex: 1 1 auto;
+    margin-left: 24px;
+    color: @text-color-secondary;
+    line-height: 22px;
+    .contentTitle {
+      margin-bottom: 12px;
+      color: @heading-color;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+}
+
+.extraContent {
+  .clearfix();
+
+  float: right;
+  white-space: nowrap;
+  .statItem {
+    position: relative;
+    display: inline-block;
+    padding: 0 32px;
+    min-width: 200px;
+    > p:first-child {
+      margin-bottom: 4px;
+      color: @text-color-secondary;
+      font-size: @font-size-base;
+      line-height: 22px;
+    }
+    > p {
+      margin: 0;
+      color: @heading-color;
+      font-size: 30px;
+      line-height: 38px;
+      > span {
+        color: @text-color-secondary;
+        font-size: 20px;
+      }
+    }
+    
+    :global {
+      .ant-statistic-title {
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      
+      .ant-statistic-content {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 44px;
+      }
+      
+      .ant-statistic-content-value {
+        color: @primary-color;
+        text-shadow: 0 1px 2px rgba(24, 144, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .ant-statistic-content-suffix {
+        font-size: 18px;
+        color: @text-color-secondary;
+        margin-left: 8px;
+      }
+    }
+    
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      width: 1px;
+      height: 40px;
+      background-color: @border-color-split;
+      content: '';
+    }
+    &:last-child {
+      padding-right: 0;
+      &::after {
+        display: none;
+      }
+    }
+    
+    // 积分区域悬停效果
+    &:hover {
+      :global {
+        .ant-statistic-content-value {
+          color: #096dd9;
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+}
+
+.members {
+  a {
+    display: block;
+    height: 24px;
+    margin: 12px 0;
+    color: @text-color;
+    transition: all 0.3s;
+    .textOverflow();
+    .member {
+      margin-left: 12px;
+      font-size: @font-size-base;
+      line-height: 24px;
+      vertical-align: top;
+    }
+    &:hover {
+      color: @primary-color;
+    }
+  }
+}
+
+.projectList {
+  :global {
+    .ant-card-meta-description {
+      color: @text-color-secondary;
+      line-height: 22px;
+    }
+  }
+  
+  .cardTitle {
+    font-size: 0;
+    a {
+      display: inline-block;
+      height: auto;
+      color: @heading-color;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      vertical-align: top;
+      transition: color 0.3s ease;
+      &:hover {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+.projectCard {
+  height: 100%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: @primary-color !important;
+  }
+  
+  :global {
+    .ant-card-meta-title {
+      margin-bottom: 8px;
+    }
+    
+    .ant-card-meta-description {
+      color: @text-color-secondary;
+    }
+  }
+}
+
+.chartContainer {
+  padding: 0;
+  height: auto;
+  
+  :global {
+    .g2-tooltip {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+.datetime {
+  color: @disabled-color;
+}
+
+@media screen and (max-width: @screen-xl) and (min-width: @screen-lg) {
+  .activeCard {
+    margin-bottom: 24px;
+  }
+  .members {
+    margin-bottom: 0;
+  }
+  .extraContent {
+    margin-left: -44px;
+    .statItem {
+      padding: 0 24px;
+      min-width: 180px;
+      
+      :global {
+        .ant-statistic-content {
+          font-size: 32px;
+        }
+        
+        .ant-statistic-content-suffix {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-lg) {
+  .activeCard {
+    margin-bottom: 24px;
+  }
+  .members {
+    margin-bottom: 0;
+  }
+  .projectCard {
+    margin-bottom: 16px;
+  }
+  .chartContainer {
+    margin-top: 16px;
+  }
+  .extraContent {
+    float: none;
+    margin-right: 0;
+    .statItem {
+      padding: 0 20px;
+      text-align: left;
+      min-width: 160px;
+      
+      :global {
+        .ant-statistic-content {
+          font-size: 28px;
+        }
+        
+        .ant-statistic-content-suffix {
+          font-size: 14px;
+        }
+      }
+      
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: @screen-md) {
+  .pageHeaderContent {
+    .content {
+      margin-left: 16px;
+      .contentTitle {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+  }
+  .extraContent {
+    .statItem {
+      padding: 0 16px;
+      min-width: 140px;
+      
+      :global {
+        .ant-statistic-title {
+          font-size: 14px;
+        }
+        
+        .ant-statistic-content {
+          font-size: 24px;
+        }
+        
+        .ant-statistic-content-suffix {
+          font-size: 12px;
+        }
+      }
+      
+      > p {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+  .projectList {
+    .projectGrid {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-sm) {
+  .pageHeaderContent {
+    display: block;
+    .content {
+      margin-left: 0;
+    }
+  }
+  .extraContent {
+    .statItem {
+      float: none;
+    }
+  }
+}
+
+@media screen and (max-width: @screen-xs) {
+  .projectList {
+    .projectGrid {
+      width: 100%;
+    }
+  }
+}
