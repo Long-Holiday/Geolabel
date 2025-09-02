@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+我将提供一系列针对现有“多人协作深度学习遥感样本标注平台”项目的改进任务。请根据每个任务的需求和执行计划，修改相应的代码文件。你需要参考以下文件（使用相对路径读取文件）：
+
+labelMark为springboot框架的后端代码;
+RS-image-sample-labeling-system\Service为Node.js Koa后端代码（核心功能基本被JAVA代替）；
+RS-image-sample-labeling-system\portal为react框架的前端代码;
+FastAPI_DL为fastapi框架的后端模块（由springboot调用，辅助深度学习部分）；
+labelMark\public.sql为PostgreSQL数据库结构；
+使用geoserver来存储遥感影像数据；
+
+我们的目标是逐步实现这些功能，使其能够正常运行。在执行每个任务时，请注意数据表结构、API接口设计、前后端交互逻辑。
+我已经配置browser-tools-mcp服务，你可以阅读浏览器相关信息
+
+虽然代码中有部分关于minio，但是并未使用minio
+
+现在系统前后端设计全部完成，不需要对代码做出改动，只需要给出系统架构功能的解释，并且要根据系统的实际情况给出解释，不要设想没有的功能

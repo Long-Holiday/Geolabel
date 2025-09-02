@@ -1,0 +1,111 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+样本标注平台代码样本标注平台代码labelMarklogs/
+D:样本标注平台代码样本标注平台代码labelMarklogs/
+*.log
+logs/
+
+trained_models/*
+!trained_models/
+
+filecontext.py
+mask_processing_comparison.png
+original_mask.png
+post_processed_mask.png
+post_processed_predicted_mask.png
+raw_predicted_mask.png
+yolo11m-obb.pt
+yolo11n.pt
+__pycache__/
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+**/node_modules/
+
+# roadhog-api-doc ignore
+/src/utils/request-temp.js
+_roadhog-api-doc
+
+# production
+**/dist/
+**/build/
+**/out/
+
+# misc
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+npm-debug.log*
+yarn-error.log
+*.log
+*.tif
+*bak
+*.exe
+
+# coverage
+**/coverage/
+
+# IDE
+**/.idea/
+**/.vscode/
+.history
+
+# environment
+*.env
+*.env.local
+.env*.local
+
+# umi
+.umi
+.umi-production
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+# lock files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# cache
+.cache/
+.parcel-cache/
+.temp/**
+functions/*
